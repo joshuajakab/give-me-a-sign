@@ -1,23 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import { Switch, Route } from 'react-router-dom';
+import Contact from './Components/Contact';
+import Footer from './Components/Footer';
+import Home from './Components/Home';
+import Menu from './Components/Menu';
+import PastWork from './Components/PastWork';
+import PhoneHeader from "./Components/PhoneHeader";
+
+
 
 function App() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+    const menuToggle = () => {
+        setMenuOpen(menuOpen => !menuOpen)
+    }
+    
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <PhoneHeader click={menuToggle}/>
+      {menuOpen && [
+      <Menu click={menuToggle}/>
+      ]}
+      <Switch>
+        <Route exact path='/' render={() => (
+          <Home />
+        )} />
+        <Route path='/pastwork' render={() => (
+          <PastWork />
+        )} />
+        <Route path='/contact' render={() => (
+          <Contact />
+        )} />
+      </Switch>
+      <Footer />
     </div>
   );
 }
