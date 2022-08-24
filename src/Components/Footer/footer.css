@@ -9,6 +9,13 @@
 }
 
 .social-icon {
-    width: 10%;
+    width: 4%;
     margin: 1%;
+}
+
+@media screen and (max-width: 800px) {
+.social-icon {
+    width: 10%;
+    
+}
 }

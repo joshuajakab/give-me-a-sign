@@ -6,8 +6,8 @@ import './pastWork.css';
 const PastWork = props => {
 
     return(
-        <div>
-            <Carousel>
+        <div className='carousel-container'>
+            <Carousel dynamicHeight='true'>
                 <div className='work-img-container'>
                     <img src='https://drive.google.com/uc?id=1PFmLM4ZGsfuyake5VpSs8W7PfECmjgjB' alt='toads-1' />
                 </div>
@@ -26,9 +26,7 @@ const PastWork = props => {
                 <div className='work-img-container'>
                     <img src='https://drive.google.com/uc?id=1QKj9wpu0TyBZ6O_jng43c5pQMPth47sz' alt='toads-1' />
                 </div>
-                <div className='work-img-container'>
-                    <img src='https://drive.google.com/uc?id=1QFfuFa1qbg1_FSOWJYe1cidlWpZ7-Xsj' alt='toads-1' />
-                </div>
+               
             </Carousel>
         </div>
     )

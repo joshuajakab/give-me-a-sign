@@ -1,4 +1,16 @@
 .work-img-container {
+    width: 50%;
+    margin: 5% 25% 0
+}
+
+.carousel-container {
+    width: 50%;
+    margin: 0 25%;
+}
+
+@media screen and (max-width: 600px) {
+.work-img-container {
     width: 80%;
     margin: 5% 10% 0;
+}
 }

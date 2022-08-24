@@ -6,11 +6,13 @@ import Home from './Components/Home';
 import Menu from './Components/Menu';
 import PastWork from './Components/PastWork';
 import PhoneHeader from "./Components/PhoneHeader";
+import { useWindowWidthAndHeight } from './hooks/useWindow';
 
 
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
+  
 
     const menuToggle = () => {
         setMenuOpen(menuOpen => !menuOpen)
@@ -18,10 +20,14 @@ function App() {
     
   return (
     <div className="App">
+      
       <PhoneHeader click={menuToggle}/>
+
       {menuOpen && [
       <Menu click={menuToggle}/>
       ]}
+      
+
       <Switch>
         <Route exact path='/' render={() => (
           <Home />
